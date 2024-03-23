@@ -1,45 +1,23 @@
 import {
   Box,
-  Button,
   Card,
   CardContent,
   Divider,
   Grid,
-  TextField,
   Typography,
 } from "@mui/material";
 import { InputBox } from "../../../componentes/InputBox";
 import { useForm } from "react-hook-form";
-import { OptionSideBar } from "../../../componentes/OptionSideBar";
 import { ButtonBox } from "../../../componentes/ButtonBox";
 import { useState } from "react";
 import { TableIntegrante } from "./TableIntegrante";
 import { listaIntegrantes } from "../../../listas/Listas";
 import { SideBar } from "../../../navigation/SideBar";
 
-interface Props {
-  setOpen: (open: boolean) => void;
-  setToastMessage: (toastMessage: string) => void;
-  handleCloseDialogForm?: () => void;
-}
-export const ShowIntegrante = ({}: // setToastMessage,
-// setOpen,
-Props) => {
-  const {
-    register,
-    setValue,
-    getValues,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+export const ShowIntegrante = () => {
+  const { register, setValue, getValues } = useForm();
   const propUseForm = { register, setValue, getValues };
   const [addItem, setAddItem] = useState(false);
-  const [opcion, setOpcion] = useState(0);
-  const handleView = () => {};
-  const storeItem = () => {};
-  const updateItem = () => {};
-  const deleteItem = () => {};
-  const getItems = () => {};
   const handleEdit = () => {};
   const handleAddItem = () => {
     setAddItem(!addItem);
@@ -129,7 +107,7 @@ Props) => {
               <TableIntegrante
                 integrantes={listaIntegrantes}
                 handleEdit={handleEdit}
-                handleDelete={function (item_id: number, nombre: string): void {
+                handleDelete={function (): void {
                   throw new Error("Function not implemented.");
                 }}
               ></TableIntegrante>

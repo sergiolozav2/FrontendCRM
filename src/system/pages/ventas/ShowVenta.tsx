@@ -2,8 +2,8 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { SideBar } from "../../../navigation/SideBar";
 import { useState } from "react";
 import { TableVentaByCliente } from "./TableVentaByCliente";
-import { TableVentaByItem } from "./TableVentaByItem";
-import { listaVentaItems } from "../../../listas/Listas";
+// import { TableVentaByItem } from "./TableVentaByItem";
+// import { listaVentaItems } from "../../../listas/Listas";
 
 export const ShowVenta = () => {
   const [vista, setVista] = useState(0);
@@ -46,9 +46,9 @@ export const ShowVenta = () => {
         <Box width={"100%"}>
           {vista == 1 ? (
             <TableVentaByCliente clientes={[]} />
-          ) : (
-            <TableVentaByItem Items={listaVentaItems} />
-          )}
+          ) : null
+          // <TableVentaByItem Items={listaVentaItems} />
+          }
         </Box>
       </Box>
     </Box>
