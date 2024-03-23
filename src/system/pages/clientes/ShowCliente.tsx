@@ -1,0 +1,246 @@
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Divider,
+  Grid,
+  IconButton,
+  Tab,
+  Tabs,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { InputBox } from "../../../componentes/InputBox";
+import { useForm } from "react-hook-form";
+import { OptionSideBar } from "../../../componentes/OptionSideBar";
+import { ButtonBox } from "../../../componentes/ButtonBox";
+import { useState } from "react";
+import { listaIntegrantes } from "../../../listas/Listas";
+import { CardCliente } from "./components/CardCliente";
+import { listaConversacionesc } from "../productos/Datos";
+import { SideBar } from "../../../navigation/SideBar";
+import { BoxJustifyRight } from "../../../componentes/BoxJustifyRight";
+import { ShowEtapa } from "./modulos/ShowEtapas";
+import { ShowCategoria } from "./modulos/ShowCategorias";
+import { Add, Close, FilterList, Menu, Search } from "@mui/icons-material";
+import { BoxDisplay } from "../../../componentes/BoxDisplay";
+import { ModalComponent } from "../../../componentes/ModalComponent";
+import { SelectBox } from "../../../componentes/SelectBox";
+import { TextFieldBox } from "../../../componentes/TextFieldBox";
+
+interface Props {
+  setOpen: (open: boolean) => void;
+  setToastMessage: (toastMessage: string) => void;
+  handleCloseDialogForm?: () => void;
+}
+export const ShowCliente = ({}: // setToastMessage,
+// setOpen,
+Props) => {
+  const {
+    register,
+    setValue,
+    getValues,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+  const [openModal, setOpenModal] = useState(false);
+  const propUseForm = { register, setValue, getValues };
+  const [addItem, setAddItem] = useState(false);
+  const [opcion, setOpcion] = useState(0);
+  const handleAddItem = () => {
+    setAddItem(!addItem);
+  };
+  const [vista, setVista] = useState(0);
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
+  return (
+    <Box mt={0} sx={{ backgroundColor: "#F9F9F9" }}>
+      <Grid container sx={{ backgroundColor: "#F9F9F9" }}>
+        <Grid item sx={{ borderRight: "1px solid gainsboro" }}>
+          <SideBar></SideBar>
+        </Grid>
+        <Grid
+          item
+          sx={{ width: { xs: "100%", md: "calc(100% - 251px)" } }}
+          paddingInline={2}
+          mt={2}
+        >
+          <Grid container spacing={0}>
+            <Grid item xs={12} mb={1}>
+              <Box display={"flex"}>
+                <IconButton sx={{ display: { xs: "block", md: "none" } }}>
+                  <Menu></Menu>
+                </IconButton>
+                <Typography variant="h5" mt={0.5}>
+                  CLIENTES
+                </Typography>
+              </Box>
+              {/* <Divider></Divider> */}
+            </Grid>
+            <Grid
+              container
+              sx={{
+                borderBottom: "1px solid gainsboro",
+              }}
+            >
+              <Grid item sm={4.5}>
+                <Tabs
+                  value={vista}
+                  onChange={(_event: React.SyntheticEvent, newValue: number) =>
+                    setVista(newValue)
+                  }
+                  aria-label="basic tabs example"
+                >
+                  <Tab
+                    color="secondary"
+                    key={1}
+                    label={"ETAPAS"}
+                    {...a11yProps(0)}
+                  />
+                  <Tab
+                    color="secondary"
+                    key={2}
+                    label={"CATEGORIAS"}
+                    {...a11yProps(1)}
+                  />
+                </Tabs>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sm={7.5}
+                sx={{
+                  display: "flex",
+                  justifyContent: "right",
+                  mt: { xs: 1, sm: 0 },
+                }}
+              >
+                <Button
+                  sx={{ color: "gray" }}
+                  onClick={() => setOpenModal(true)}
+                >
+                  <Add sx={{ m: 0.5, mt: 0, fontSize: 14 }}></Add>
+
+                  <Typography
+                    fontSize={"small"}
+                    sx={{ display: { xs: "none", md: "block" }, mr: 1 }}
+                  >
+                    Categoría
+                  </Typography>
+                </Button>
+                <Divider orientation="vertical"></Divider>
+                {opcion == 2 ? (
+                  <BoxDisplay>
+                    <IconButton onClick={() => {}} sx={{ m: 0 }}>
+                      <FilterList
+                        sx={{ m: 0.5, mt: 0, fontSize: 14 }}
+                      ></FilterList>
+                    </IconButton>
+                    <TextField
+                      size="small"
+                      inputProps={{ sx: { fontSize: "12px", p: 1 } }}
+                      sx={{ mt: 1, width: "130px" }}
+                    ></TextField>
+                    <IconButton onClick={() => setOpcion(0)}>
+                      <Close sx={{ m: 0.5, mt: 0, fontSize: 14 }}></Close>
+                    </IconButton>
+                  </BoxDisplay>
+                ) : (
+                  <Button sx={{ color: "gray" }} onClick={() => setOpcion(2)}>
+                    <FilterList
+                      sx={{ m: 0.5, mt: 0, fontSize: 14 }}
+                    ></FilterList>
+
+                    <Typography
+                      fontSize={"small"}
+                      sx={{ display: { xs: "none", md: "block" }, mr: 1 }}
+                    >
+                      Filtrar
+                    </Typography>
+                  </Button>
+                )}
+                <Divider orientation="vertical"></Divider>
+
+                {opcion == 3 ? (
+                  <BoxDisplay>
+                    <IconButton onClick={() => {}} sx={{ m: 0 }}>
+                      <Search sx={{ m: 0.5, mt: 0, fontSize: 14 }}></Search>
+                    </IconButton>
+                    <TextField
+                      size="small"
+                      inputProps={{ sx: { fontSize: "12px", p: 1 } }}
+                      sx={{ mt: 1, width: "130px" }}
+                    ></TextField>
+                    <IconButton onClick={() => setOpcion(0)}>
+                      <Close sx={{ m: 0.5, mt: 0, fontSize: 14 }}></Close>
+                    </IconButton>
+                  </BoxDisplay>
+                ) : (
+                  <Button sx={{ color: "gray" }} onClick={() => setOpcion(3)}>
+                    <Search sx={{ m: 0.5, mt: 0, fontSize: 14 }}></Search>
+
+                    <Typography
+                      fontSize={"small"}
+                      sx={{ display: { xs: "none", md: "block" }, mr: 1 }}
+                    >
+                      Buscar
+                    </Typography>
+                  </Button>
+                )}
+              </Grid>
+            </Grid>
+            {/* <Grid item md={12}>
+              <Divider></Divider>
+            </Grid> */}
+            {vista == 0 ? (
+              <ShowEtapa></ShowEtapa>
+            ) : (
+              <ShowCategoria></ShowCategoria>
+            )}
+          </Grid>
+        </Grid>
+        {/*GRAFICOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */}
+      </Grid>
+      <ModalComponent
+        openModal={openModal}
+        handleCloseModal={() => setOpenModal(false)}
+      >
+        <Box>
+          <Typography variant="h5">Categoria</Typography>
+          <Box sx={{ marginBlock: 2 }}>
+            <TextFieldBox
+              label={"Categoria"}
+              fieldValueName={"Categoria"}
+              useForm={propUseForm}
+            ></TextFieldBox>
+          </Box>
+          <SelectBox
+            optionsList={[{ nombre: "azul" }]}
+            label={"nombre"}
+            optionLabel={"nombre"}
+            optionValueId={"nombre"}
+            control={control}
+          ></SelectBox>
+          <Grid container spacing={1}>
+            <ButtonBox
+              onClickFunction={() => {}}
+              isFill={true}
+              label={"Guardar"}
+            ></ButtonBox>
+            <ButtonBox
+              onClickFunction={() => setOpenModal(false)}
+              isFill={false}
+              label={"Cancelar"}
+            ></ButtonBox>
+          </Grid>
+        </Box>
+      </ModalComponent>
+    </Box>
+  );
+};
