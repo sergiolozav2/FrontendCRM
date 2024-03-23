@@ -9,6 +9,8 @@ import { ShowConversacion } from "../pages/conversaciones/ShowConversacion";
 import { ShowIntegrante } from "../pages/integrantes/ShowIntegrante";
 import { ShowTarea } from "../pages/tareas/ShowTarea";
 import { ShowVenta } from "../pages/ventas/ShowVenta";
+import { LoginPage } from "../../modulos/auth/LoginPage";
+import { RegisterPage } from "../../modulos/auth/RegisterPage";
 
 export const SystemRoutes = () => {
   //   const { authState, toggle } = useContext(AuthContext);
@@ -21,48 +23,45 @@ export const SystemRoutes = () => {
   const setToastMessage = () => {};
   return (
     <>
-      <div>
-        <Routes>
-          <Route
-            path="items"
-            element={
-              <ShowItem setToastMessage={setToastMessage} setOpen={setOpen} />
-            }
-          />
-          <Route path="loginp" element={<Login />} />
-          <Route path="registros" element={<FormRegistro />} />
-          <Route path="informacion" element={<FormInformacion />} />
-          <Route path="conversaciones" element={<ShowConversacion />} />
-          <Route
-            path="integrantes"
-            element={
-              <ShowIntegrante
-                setToastMessage={setToastMessage}
-                setOpen={setOpen}
-              />
-            }
-          />
-          <Route
-            path="tareas"
-            element={
-              <ShowTarea setToastMessage={setToastMessage} setOpen={setOpen} />
-            }
-          />
-          <Route path="ventas" element={<ShowVenta />} />
-          <Route
-            path="clientes"
-            element={
-              <ShowCliente
-                setToastMessage={setToastMessage}
-                setOpen={setOpen}
-              />
-            }
-          />
-          {/* <Route path="mensajes-rapidos" element={<ShowMensajeRapido />} /> */}
+      <Routes>
+        <Route
+          path="items"
+          element={
+            <ShowItem setToastMessage={setToastMessage} setOpen={setOpen} />
+          }
+        />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        {/* <Route path="loginp" element={<Login />} /> */}
+        <Route path="registros" element={<FormRegistro />} />
+        <Route path="informacion" element={<FormInformacion />} />
+        <Route path="conversaciones" element={<ShowConversacion />} />
+        <Route
+          path="integrantes"
+          element={
+            <ShowIntegrante
+              setToastMessage={setToastMessage}
+              setOpen={setOpen}
+            />
+          }
+        />
+        <Route
+          path="tareas"
+          element={
+            <ShowTarea setToastMessage={setToastMessage} setOpen={setOpen} />
+          }
+        />
+        <Route path="ventas" element={<ShowVenta />} />
+        <Route
+          path="clientes"
+          element={
+            <ShowCliente setToastMessage={setToastMessage} setOpen={setOpen} />
+          }
+        />
+        {/* <Route path="mensajes-rapidos" element={<ShowMensajeRapido />} /> */}
 
-          <Route path="*" element={<Navigate to="/inicio" />} />
-        </Routes>
-      </div>
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
     </>
   );
 };
