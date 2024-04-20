@@ -11,7 +11,7 @@ interface Props {
   handleDelete: (mensaje_id: number, nombre: string) => void;
 }
 
-export const TableMensaje = ({
+export const TableMensajeRapido = ({
   //   accesos,
   mensajes,
   handleDelete,
@@ -39,25 +39,25 @@ export const TableMensaje = ({
         size: 100,
       },
 
-    //   {
-    //     accessorKey: "descripcion",
-    //     header: "Descripcion",
-    //     enableColumnFilter: false,
-    //     Cell: ({ row }) => (
-    //       <Box sx={{ fontSize: "10px" }}>{row.original.descripcion}</Box>
-    //     ),
+      //   {
+      //     accessorKey: "descripcion",
+      //     header: "Descripcion",
+      //     enableColumnFilter: false,
+      //     Cell: ({ row }) => (
+      //       <Box sx={{ fontSize: "10px" }}>{row.original.descripcion}</Box>
+      //     ),
 
-    //     size: 200,
-    //   },
-    //   {
-    //     accessorKey: "precio",
-    //     header: "Precio",
-    //     enableColumnFilter: false,
-    //     Cell: ({ row }) => (
-    //       <Box sx={{ fontSize: "10px" }}>Bs. {row.original.precio}</Box>
-    //     ),
-    //     size: 50,
-    //   },
+      //     size: 200,
+      //   },
+      //   {
+      //     accessorKey: "precio",
+      //     header: "Precio",
+      //     enableColumnFilter: false,
+      //     Cell: ({ row }) => (
+      //       <Box sx={{ fontSize: "10px" }}>Bs. {row.original.precio}</Box>
+      //     ),
+      //     size: 50,
+      //   },
     ],
     [mensajes]
   );
@@ -72,8 +72,6 @@ export const TableMensaje = ({
       initialState={{
         density: "compact",
       }}
-
-
       muiTableBodyCellProps={{
         sx: { paddingBlock: 0 },
       }}

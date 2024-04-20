@@ -7,19 +7,20 @@ import { useNavigate } from "react-router-dom";
 import { listaOpciones } from "../listas/Listas";
 
 interface Props {
+  opcion: any;
   //   label: string;
   //   activo: boolean;
   // register:  any;
 }
 
-export const SideBar = ({}: Props) => {
-  const { setOpcion } = useContext(AuthContext);
-  const { authState } = useAuth();
-  const { opcion } = authState;
+export const SideBar = ({ opcion }: Props) => {
+  // const { setOpcion } = useContext(AuthContext);
+  // const { authState } = useAuth();
+  // const { opcion } = authState;
   const navigate = useNavigate();
   const changeOption = (opcion_seleccionada: any) => {
     console.log(opcion_seleccionada);
-    setOpcion(opcion_seleccionada.opcion);
+    // setOpcion(opcion_seleccionada.opcion);
     navigate(opcion_seleccionada.ruta);
   };
   return (

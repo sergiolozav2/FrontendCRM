@@ -1,3 +1,242 @@
+export const listaVentas = [
+  {
+    itemID: 1,
+    itemNombre: "Item 1",
+    cantidadItem: 5,
+    totalItem: 10,
+    ventas: [
+      {
+        clienteID: 1,
+        clienteNombre: "Juan",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 2,
+        clienteNombre: "Maria",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 3,
+        clienteNombre: "Alex",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+    ],
+  },
+  {
+    itemID: 2,
+    itemNombre: "Item 1",
+    cantidadItem: 5,
+    totalItem: 10,
+    ventas: [
+      {
+        clienteID: 4,
+        clienteNombre: "Diana",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 1,
+        clienteNombre: "Juan",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 7,
+        clienteNombre: "Luciana",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+    ],
+  },
+  {
+    itemID: 3,
+    itemNombre: "Item 1",
+    cantidadItem: 5,
+    totalItem: 10,
+    ventas: [
+      {
+        clienteID: 1,
+        clienteNombre: "Juan",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 2,
+        clienteNombre: "Ana",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 3,
+        clienteNombre: "Cliente 3",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+    ],
+  },
+  {
+    itemID: 4,
+    itemNombre: "Item 1",
+    cantidadItem: 5,
+    totalItem: 10,
+    ventas: [
+      {
+        clienteID: 4,
+        clienteNombre: "Julia",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 1,
+        clienteNombre: "Juan",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+      {
+        clienteID: 5,
+        clienteNombre: "Marta",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "efectivo",
+      },
+    ],
+  },
+];
+export const listaVentasByCliente = [
+  {
+    clienteID: 1,
+    clienteNombre: "Maria",
+    cantidadItem: 5,
+    totalItem: 6,
+    ventas: [
+      {
+        itemID: 1,
+        productoNombre: "item 1",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+      {
+        itemID: 2,
+        productoNombre: "item 2",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+    ],
+  },
+  {
+    clienteID: 2,
+    clienteNombre: "Carla",
+    cantidadItem: 5,
+    totalItem: 6,
+    ventas: [
+      {
+        itemID: 1,
+        productoNombre: "item 1",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+    ],
+  },
+  {
+    clienteID: 3,
+    clienteNombre: "Steph",
+    cantidadItem: 5,
+    totalItem: 6,
+    ventas: [
+      {
+        itemID: 1,
+        productoNombre: "item 1",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+      {
+        itemID: 2,
+        productoNombre: "item 2",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+      {
+        itemID: 3,
+        productoNombre: "item 3",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+    ],
+  },
+  {
+    clienteID: 4,
+    clienteNombre: "Mariano",
+    cantidadItem: 5,
+    totalItem: 6,
+    ventas: [
+      {
+        itemID: 1,
+        productoNombre: "item 1",
+        cantidadItem: 2,
+        precioItem: 500,
+        totalItem: 1000,
+        fecha: "20/10/2024",
+        tipoPago: "Efectivo",
+      },
+    ],
+  },
+];
 export const Lista_TipoSolicitud = [
   {
     opcion: "Compra Local",
@@ -220,12 +459,196 @@ export const listaConversaciones = [
   { nombreContacto: "Cliente 3", lastMessage: "Gracias", timeMessage: "18:45" },
   { nombreContacto: "Cliente 4", lastMessage: "Gracias", timeMessage: "18:45" },
 ];
+export const listaSesion = [
+  {
+    wa_sesionID: "4d4d68f5-42ab-49a5-8865-99176f2769c5",
+    creadoEn: "2024-03-20T18:29:15.848Z",
+    creador: {
+      usuarioID: 1,
+      correo: "user@example.com",
+      nombre: "Pedro",
+    },
+  },
+  {
+    wa_sesionID: "789ff366-5c7e-48b6-afff-e69f05ab29dc",
+    creadoEn: "2024-03-20T23:30:20.085Z",
+    creador: {
+      usuarioID: 1,
+      correo: "user@example.com",
+      nombre: "Pedro",
+    },
+  },
+];
+
+export const informacionUsuario = {
+  usuario: {
+    usuarioID: 1,
+    nombre: "Pedro",
+    correo: "user@example.com",
+    empresa: {
+      empresaID: 1,
+      creadoEn: "2024-03-20T18:28:50.076Z",
+      nombreEmpresa: "Maxcorp",
+    },
+    tipo: "EMPRESARIO",
+    telefono: "+123456",
+    licencia: null,
+    rol: null,
+  },
+  token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSUQiOjEsImVtcHJlc2FJRCI6MSwidHlwZSI6Imp3dCIsImlhdCI6MTcxMTY0MDYzNywiZXhwIjoxNzExOTg2MjM3fQ.13DvuuPfqZ4vkwiqmBlgwdpy-2OMncDjnq887MMSzXo",
+  refreshToken:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSUQiOjEsImVtcHJlc2FJRCI6MSwidHlwZSI6InJlZnJlc2giLCJpYXQiOjE3MTE2NDA2MzcsImV4cCI6MTcxMTcyNzAzN30.965rYkp-k_zGRNZl6yfNuYpW4xqFUyP-kcACbT-hcy4",
+};
 
 export const listaMensajes = [
   {
-    personMessage: 1,
-    message: "mensaje 1",
-    timeMessage: "18:45",
+    clienteID: 1,
+    listaMensajes: [
+      {
+        personMessage: 2,
+        message:
+          "Buenas tardes como esta, me gustaría preguntar por el producto tanto",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "Todavia lo tiene disponible",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "Buenas noches, si, estaría a 100bs sin incluir envio",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "Y con envio cuantos sería",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "a la Av. Banzer 7mo anillo",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "Seria 10Bs",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "Esta Perfecto, muchas gracias",
+        timeMessage: "18:45",
+      },
+    ],
+  },
+  {
+    clienteID: 2,
+    listaMensajes: [
+      {
+        personMessage: 2,
+        message: "Buenas noches a cuanto el promoción de invierno",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "El paquete está a 500Bs",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "Por la compra de dos, hay un 20% de descuento",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "Con uno estaría bien, gracias",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "Claro, el pago como desea realizar",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "Se puede por transferencia",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "O por QR también estaría bien",
+        timeMessage: "18:45",
+      },
+    ],
+  },
+  {
+    clienteID: 3,
+    listaMensajes: [
+      {
+        personMessage: 2,
+        message: "Vi en facebook que tiene a la venta tal producto",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message: "Quisiera saber el precio y en cuanto tiempo me lo entregan",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "Si, estaría a 100Bs, en 2 días se entrega",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 2,
+        message:
+          "Estaría perfecto muchas gracias, hasta cuando le puedo confirmar",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message:
+          "Hasta acabar stock, unos tres días mas estaría disponible yo creo",
+        timeMessage: "18:45",
+      },
+      {
+        personMessage: 1,
+        message: "Me avisa cualquier cosa",
+        timeMessage: "18:45",
+      },
+    ],
+  },
+  {
+    clienteID: 4,
+    listaMensajes: [
+      {
+        personMessage: 1,
+        message: "Buenas tardes",
+        timeMessage: "18:45",
+      },
+    ],
+  },
+  {
+    clienteID: 5,
+    listaMensajes: [
+      {
+        personMessage: 1,
+        message: "Buenas tardes",
+        timeMessage: "18:45",
+      },
+    ],
+  },
+  {
+    clienteID: 6,
+    listaMensajes: [
+      {
+        personMessage: 1,
+        message: "Buenas tardes",
+        timeMessage: "18:45",
+      },
+    ],
   },
 ];
 
@@ -401,12 +824,192 @@ export const listaCategorias = [
     cantidadGanancias: 10000,
   },
 ];
+export const listaConversaciones2 = [
+  {
+    chatID: 1,
+    jid: "59175034784@s.whatsapp.net",
+    creadoEn: "2024-03-20T18:57:17.325Z",
+    clienteID: 1,
+    cliente: null,
+    mensajes: [
+      {
+        mensajeID: 1,
+        creadoEn: "2024-03-20T18:57:17.331Z",
+        wa_id: "3EB0A555FA5100F49CC666",
+        wa_contenido: '{"conversation":"g7xp"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+      {
+        mensajeID: 3,
+        creadoEn: "2024-03-20T19:49:35.000Z",
+        wa_id: "3EB0C4DCBDD6EA67166030",
+        wa_contenido: '{"conversation":"nex87e2"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+    ],
+  },
+  {
+    chatID: 2,
+    jid: "59175034784@s.whatsapp.net",
+    creadoEn: "2024-03-20T18:57:17.325Z",
+    clienteID: 2,
+    cliente: null,
+    mensajes: [
+      {
+        mensajeID: 1,
+        creadoEn: "2024-03-20T18:57:17.331Z",
+        wa_id: "3EB0A555FA5100F49CC666",
+        wa_contenido: '{"conversation":"g7xp"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+      {
+        mensajeID: 3,
+        creadoEn: "2024-03-20T19:49:35.000Z",
+        wa_id: "3EB0C4DCBDD6EA67166030",
+        wa_contenido: '{"conversation":"nex87e2"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+    ],
+  },
+  {
+    chatID: 3,
+    jid: "59175034784@s.whatsapp.net",
+    creadoEn: "2024-03-20T18:57:17.325Z",
+    clienteID: 3,
+    cliente: null,
+    mensajes: [
+      {
+        mensajeID: 1,
+        creadoEn: "2024-03-20T18:57:17.331Z",
+        wa_id: "3EB0A555FA5100F49CC666",
+        wa_contenido: '{"conversation":"g7xp"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+      {
+        mensajeID: 3,
+        creadoEn: "2024-03-20T19:49:35.000Z",
+        wa_id: "3EB0C4DCBDD6EA67166030",
+        wa_contenido: '{"conversation":"nex87e2"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+    ],
+  },
+  {
+    chatID: 4,
+    jid: "59175034784@s.whatsapp.net",
+    creadoEn: "2024-03-20T18:57:17.325Z",
+    clienteID: 4,
+    cliente: null,
+    mensajes: [
+      {
+        mensajeID: 1,
+        creadoEn: "2024-03-20T18:57:17.331Z",
+        wa_id: "3EB0A555FA5100F49CC666",
+        wa_contenido: '{"conversation":"g7xp"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+      {
+        mensajeID: 3,
+        creadoEn: "2024-03-20T19:49:35.000Z",
+        wa_id: "3EB0C4DCBDD6EA67166030",
+        wa_contenido: '{"conversation":"nex87e2"}',
+        tipoMensaje: "TEXTO",
+        chatID: 1,
+      },
+    ],
+  },
+];
+
+export const listaClientes = [
+  {
+    clienteID: 1,
+    clienteNombre: "Maria Jose",
+    telefono: "70005958",
+    email: "mjso0308@gmail.com",
+    categoria: "Ropa Femenina",
+    prioridad: "Media",
+    etapa: "Negociacion",
+    colorEtapa: "red",
+    colorCategoria: "#63C7FF",
+    colorPrioridad: "red",
+  },
+  {
+    clienteID: 2,
+    clienteNombre: "Juan SC",
+    telefono: "78965412",
+    email: "juan_sc@gmail.com",
+    categoria: "Accesorios",
+    prioridad: "Alta",
+    etapa: "Negociacion",
+    colorEtapa: "red",
+    colorCategoria: "#A1EA22",
+    colorPrioridad: "red",
+  },
+  {
+    clienteID: 3,
+    clienteNombre: "Luciana LP",
+    telefono: "60045480",
+    email: "luciana_lp@gmail.com",
+    categoria: "Zapatos",
+    prioridad: "Alta",
+    etapa: "Seguimiento",
+    colorEtapa: "red",
+    colorCategoria: "#675BFF",
+    colorPrioridad: "red",
+  },
+  {
+    clienteID: 4,
+    clienteNombre: "+591 71234567",
+    telefono: "71234567",
+    email: "",
+    categoria: "Sin Categoría",
+    prioridad: "Media",
+    etapa: "Contacto inicial",
+    colorEtapa: "red",
+    colorCategoria: "gray",
+    colorPrioridad: "red",
+  },
+  {
+    clienteID: 5,
+    clienteNombre: "Carlos CBBA",
+    telefono: "60000000",
+    email: "juan_sc@gmail.com",
+    categoria: "Ropa Masculina",
+    prioridad: "Alta",
+    etapa: "Negociacion",
+    colorEtapa: "red",
+    colorCategoria: "#FB3088",
+    colorPrioridad: "red",
+  },
+  {
+    clienteID: 6,
+    clienteNombre: "Camila SC",
+    telefono: "78965412",
+    email: "juan_sc@gmail.com",
+    categoria: "Accesorios",
+    prioridad: "Alta",
+    etapa: "Negociacion",
+    colorEtapa: "red",
+    colorCategoria: "#A1EA22",
+    colorPrioridad: "red",
+  },
+];
+
 export const listaOpciones = [
   { titulo: "CONVERSACIONES", opcion: 1, ruta: "/conversaciones" },
   { titulo: "ITEMS", opcion: 2, ruta: "/items" },
   { titulo: "CLIENTES", opcion: 3, ruta: "/clientes" },
   { titulo: "VENTAS", opcion: 4, ruta: "/ventas" },
   { titulo: "MENSAJES RÁPIDOS", opcion: 5, ruta: "/mensajes-rapidos" },
+  { titulo: "INTEGRANTES", opcion: 6, ruta: "/integrantes" },
+  { titulo: "TAREAS", opcion: 7, ruta: "/tareas" },
 ];
 export const listaItems = [
   {

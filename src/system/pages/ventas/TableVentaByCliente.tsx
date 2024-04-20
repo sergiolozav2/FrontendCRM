@@ -18,7 +18,7 @@ export const TableVentaByCliente = ({ clientes }: Props) => {
         header: "cliente",
         enableColumnFilter: false,
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "10px" }}>{row.original.clienteID}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.clienteID}</Box>
         ),
 
         size: 50,
@@ -27,7 +27,7 @@ export const TableVentaByCliente = ({ clientes }: Props) => {
         accessorKey: "clienteNombre",
         header: "Nombre",
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "10px" }}>{row.original.clienteNombre}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.clienteNombre}</Box>
         ),
 
         size: 100,
@@ -36,7 +36,7 @@ export const TableVentaByCliente = ({ clientes }: Props) => {
         accessorKey: "cantidadItem",
         header: "Items Vendidos",
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "10px" }}>{row.original.cantidadItem}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.cantidadItem}</Box>
         ),
 
         size: 100,
@@ -45,7 +45,7 @@ export const TableVentaByCliente = ({ clientes }: Props) => {
         accessorKey: "totalItem",
         header: "Total Vendido",
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "10px" }}>{row.original.totalItem}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.totalItem}</Box>
         ),
 
         size: 100,
@@ -61,9 +61,11 @@ export const TableVentaByCliente = ({ clientes }: Props) => {
       localization={MRT_Localization_ES}
       enableRowActions
       positionActionsColumn="last"
-      initialState={{
-        density: "compact",
-      }}
+      initialState={
+        {
+          // density: "compact",
+        }
+      }
       muiTableBodyCellProps={{
         sx: { paddingBlock: 0 },
       }}

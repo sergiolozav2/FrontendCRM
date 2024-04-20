@@ -1,5 +1,11 @@
 import { Edit, Flag } from "@mui/icons-material";
-import { Box, Grid, IconButton, Typography } from "@mui/material";
+import { Box, Divider, Grid, IconButton, Typography } from "@mui/material";
+import { ModalComponent } from "../../../../componentes/ModalComponent";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { SelectColorBox } from "../../../../componentes/SelectColorBox";
+import { InputBox } from "../../../../componentes/InputBox";
+import { ButtonBox } from "../../../../componentes/ButtonBox";
 interface Props {
   info: any;
   color: string;
@@ -7,6 +13,16 @@ interface Props {
 }
 
 export const BoxInforCliente = ({ info, color, isTitle }: Props) => {
+  const {
+    register,
+    setValue,
+    getValues,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+  const [openModal, setOpenModal] = useState(false);
+  const useFormProps = { register, setValue, getValues };
   return (
     <>
       <Box
@@ -115,7 +131,7 @@ export const BoxInforCliente = ({ info, color, isTitle }: Props) => {
             display={"flex"}
             justifyContent={"center"}
           >
-            <IconButton sx={{ p: 0 }}>
+            <IconButton sx={{ p: 0 }} onClick={() => setOpenModal(true)}>
               <Edit fontSize="small" color="disabled"></Edit>
             </IconButton>
           </Grid>
@@ -161,6 +177,66 @@ export const BoxInforCliente = ({ info, color, isTitle }: Props) => {
             </Typography>
           </Grid>
         </Grid>
+        <ModalComponent
+          openModal={openModal}
+          handleCloseModal={() => setOpenModal(false)}
+        >
+          <Box>
+            <Typography variant="h6">Cliente</Typography>
+            <Divider></Divider>
+            <Grid container spacing={1} marginBlock={1}>
+              <InputBox
+                label={"Nombre"}
+                name={"nombre"}
+                useForm={useFormProps}
+                md={12}
+                sm={12}
+              ></InputBox>
+              <SelectColorBox
+                optionsList={[
+                  { prioridad: "Baja", color: "#1FCB71" },
+                  { prioridad: "Media", color: "#F5B31D" },
+                  { prioridad: "Alta", color: "#F51D5C" },
+                ]}
+                label={"Prioridad"}
+                optionLabel={"prioridad"}
+                optionValueId={"prioridad"}
+                control={control}
+              ></SelectColorBox>
+              <SelectColorBox
+                sm={6}
+                optionsList={[
+                  { etapa: "Contacto Inicial", color: "#3498DB" },
+                  { etapa: "Seguimiento", color: "#29ABC9" },
+                  { etapa: "Negociación", color: "#29C9C2" },
+                  { etapa: "Vendido", color: "#1CB68E" },
+                ]}
+                label={"Etapa"}
+                optionLabel={"etapa"}
+                optionValueId={"etapa"}
+                control={control}
+              ></SelectColorBox>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              mt={1}
+              display={"flex"}
+              justifyContent={"right"}
+            >
+              <ButtonBox
+                onClickFunction={() => setOpenModal(false)}
+                isFill
+                label={"Guardar"}
+              ></ButtonBox>
+              <ButtonBox
+                onClickFunction={() => setOpenModal(false)}
+                isFill={false}
+                label={"Cancelar"}
+              ></ButtonBox>
+            </Grid>
+          </Box>
+        </ModalComponent>
       </Box>
     </>
   );

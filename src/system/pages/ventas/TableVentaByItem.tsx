@@ -18,7 +18,7 @@ export const TableVentaByItem = ({ Items }: Props) => {
         header: "ID",
         enableColumnFilter: false,
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "11px" }}>{row.original.itemID}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.itemID}</Box>
         ),
         size: 25,
       },
@@ -26,7 +26,7 @@ export const TableVentaByItem = ({ Items }: Props) => {
         accessorKey: "itemNombre",
         header: "Nombre",
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "11px" }}>{row.original.itemNombre}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.itemNombre}</Box>
         ),
         size: 200,
       },
@@ -34,7 +34,7 @@ export const TableVentaByItem = ({ Items }: Props) => {
         accessorKey: "cantidadItem",
         header: "Cantidad",
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "11px" }}>{row.original.cantidadItem}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.cantidadItem}</Box>
         ),
         size: 100,
       },
@@ -42,11 +42,10 @@ export const TableVentaByItem = ({ Items }: Props) => {
         accessorKey: "totalItem",
         header: "Total",
         Cell: ({ row }) => (
-          <Box sx={{ fontSize: "11px" }}>{row.original.totalItem}</Box>
+          <Box sx={{ fontSize: "12px" }}>{row.original.totalItem}</Box>
         ),
         size: 100,
       },
-      
     ],
     [Items]
   );
@@ -56,14 +55,13 @@ export const TableVentaByItem = ({ Items }: Props) => {
       columns={columns}
       data={Items}
       localization={MRT_Localization_ES}
-
       muiTableBodyCellProps={{
         sx: { paddingBlock: 0 },
       }}
       renderDetailPanel={({ row }) => (
-        <>
-           <TableVentaDetail ventas={row.original.ventas} tipo={1}/>
-        </>
+        <Box sx={{ backgroundColor: "#F9F9F9" }}>
+          <TableVentaDetail ventas={row.original.ventas} tipo={1} />
+        </Box>
       )}
     />
   );

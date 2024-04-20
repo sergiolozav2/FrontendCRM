@@ -1,19 +1,23 @@
 import { AccountCircle } from "@mui/icons-material";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 interface Props {
-  nombreContacto: string;
   lastMessage: string;
   timeMessage: string;
+  cliente: any;
 }
 export const BoxConversacion = ({
-  nombreContacto,
+  cliente,
   lastMessage,
   timeMessage,
 }: Props) => {
   return (
-    <Box mb={0.2}>
+    <Box pb={0.2}>
       <Box
-        sx={{ borderLeft: "solid 5px #5C2CC3", p: 0.5, pb: 0 }}
+        sx={{
+          borderLeft: `solid 5px ${cliente.colorCategoria}`,
+          p: 0.7,
+          pb: 0,
+        }}
         display={"flex"}
       >
         <AccountCircle
@@ -27,7 +31,7 @@ export const BoxConversacion = ({
             width={"175px"}
           >
             <Box>
-              <Typography fontSize={14}>{nombreContacto}</Typography>
+              <Typography fontSize={14}>{cliente.clienteNombre}</Typography>
             </Box>
             <Typography fontSize={9}>{timeMessage}</Typography>
           </Box>
@@ -43,9 +47,9 @@ export const BoxConversacion = ({
           >
             {lastMessage}
           </Typography>
-          <Divider></Divider>
         </Box>
       </Box>
+      <Divider sx={{ mt: 0.5 }}></Divider>
     </Box>
   );
 };

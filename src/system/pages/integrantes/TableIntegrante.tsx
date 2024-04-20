@@ -6,7 +6,6 @@ import { MRT_Localization_ES } from "material-react-table/locales/es";
 
 interface Props {
   //   accesos: RolAcceso[] | null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   integrantes: any[];
   handleEdit: (integranteID: number) => void;
   handleDelete: (integranteID: number, nombre: string) => void;
@@ -73,6 +72,8 @@ export const TableIntegrante = ({
       initialState={{
         density: "compact",
       }}
+
+
       muiTableBodyCellProps={{
         sx: { paddingBlock: 0 },
       }}

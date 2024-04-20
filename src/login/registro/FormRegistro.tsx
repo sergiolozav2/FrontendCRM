@@ -11,25 +11,55 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { useState } from "react";
+import { AuthService } from "../../client";
 
 export const FormRegistro = () => {
-  const { register, setValue, getValues } = useForm();
+  const { register, setValue, getValues, handleSubmit } = useForm();
   const useFormProps = { register, setValue, getValues };
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
   const theme = useTheme();
-  const handleNext = () => {
+  const [usuario, setUsuario] = useState({
+    nombre: "",
+    apellido: "",
+    password: "",
+    correo: "",
+    telefono: "",
+    segundoApellido: "",
+    verificado: true,
+  });
+  const [empresa, setEmpresa] = useState({
+    nombreEmpresa: "",
+  });
+  const [response, setResponse] = useState();
+
+  const handleNext = (data: any) => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    if(activeStep==2){
-        navigate('/informacion')
+    if (activeStep == 2) {
+      navigate("/informacion");
+      submitForm(data);
     }
   };
-
+  const submitForm = async (data: any) => {
+    if (activeStep == 2) {
+      console.log(data);
+      AuthService.postAuthRegister({
+        usuario,
+        empresa,
+      })
+        .then((result) => {
+          setResponse(result);
+        })
+        .catch((error) => {
+          setResponse(error);
+        });
+    }
+  };
   const handleBack = () => {
-    console.log()
+    console.log();
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    if(activeStep==0){
-        navigate('/loginp')
+    if (activeStep == 0) {
+      navigate("/loginp");
     }
   };
   return (
@@ -40,10 +70,15 @@ export const FormRegistro = () => {
         alignItems: "center",
         background: "linear-gradient(to bottom right, #4F45C9 , #5596D4)",
         height: "100vh",
+        width: "100vw",
       }}
     >
       <Box
-        sx={{ backgroundColor: "white", width: { xs: "70%", sm: "40%" }, p: 4 }}
+        component="form"
+        autoComplete="off"
+        onSubmit={handleSubmit(submitForm)}
+        noValidate
+        sx={{ backgroundColor: "white", width: { xs: "80%", md: "40%" }, p: 4 }}
       >
         <Grid container spacing={1}>
           {activeStep == 0 ? (
@@ -105,13 +140,13 @@ export const FormRegistro = () => {
                 name={"nombreEmpresa"}
                 useForm={useFormProps}
               ></LoginInputBox>
-               <LoginInputBox
+              <LoginInputBox
                 md={12}
                 label={"Cantidad de Empleados"}
                 name={"cantidadEmpleados"}
                 useForm={useFormProps}
               ></LoginInputBox>
-               <LoginInputBox
+              <LoginInputBox
                 md={12}
                 label={"Cantidad de Dispositivos"}
                 name={"cantidadDispositivos"}
@@ -128,9 +163,11 @@ export const FormRegistro = () => {
               sx={{ maxWidth: 400, flexGrow: 1 }}
               nextButton={
                 <Button
+                  type="submit"
                   size="small"
                   onClick={handleNext}
-                //   disabled={activeStep === 2}
+
+                  //   disabled={activeStep === 2}
                 >
                   Next
                   {theme.direction === "rtl" ? (
@@ -144,7 +181,7 @@ export const FormRegistro = () => {
                 <Button
                   size="small"
                   onClick={handleBack}
-                //   disabled={activeStep === 0}
+                  //   disabled={activeStep === 0}
                 >
                   {theme.direction === "rtl" ? (
                     <KeyboardArrowRight />

@@ -8,6 +8,7 @@ export const ShowEtapa = () => {
       <Grid item xs={12} sm={3}>
         <CardCliente
           etapa="Contacto Inicial"
+          color="#3498DB"
           clientes={listaConversacionesc.filter(
             (cliente: any) => cliente.etapa == "Etapa 1"
           )}
@@ -16,6 +17,7 @@ export const ShowEtapa = () => {
       <Grid item xs={12} sm={3}>
         <CardCliente
           etapa="Seguimiento"
+          color="#29ABC9"
           clientes={listaConversacionesc.filter(
             (cliente: any) => cliente.etapa == "Etapa 2"
           )}
@@ -23,6 +25,7 @@ export const ShowEtapa = () => {
       </Grid>
       <Grid item xs={12} sm={3}>
         <CardCliente
+          color="#29C9C2"
           etapa="Negociacion"
           clientes={listaConversacionesc.filter(
             (cliente: any) => cliente.etapa == "Etapa 3"
@@ -35,6 +38,7 @@ export const ShowEtapa = () => {
           clientes={listaConversacionesc.filter(
             (cliente: any) => cliente.etapa == "Etapa 4"
           )}
+          color="#29C9C2"
         ></CardCliente>
       </Grid>
     </>

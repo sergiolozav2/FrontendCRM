@@ -9,7 +9,7 @@ interface Props {
   categoria: any;
 }
 export const BoxCategoria = ({ categoria }: Props) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   return (
     <>
       <Grid container>

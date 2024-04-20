@@ -26,8 +26,7 @@ import { ShowCategoria } from "./modulos/ShowCategorias";
 import { Add, Close, FilterList, Menu, Search } from "@mui/icons-material";
 import { BoxDisplay } from "../../../componentes/BoxDisplay";
 import { ModalComponent } from "../../../componentes/ModalComponent";
-import { SelectBox } from "../../../componentes/SelectBox";
-import { TextFieldBox } from "../../../componentes/TextFieldBox";
+import { SelectColorBox } from "../../../componentes/SelectColorBox";
 
 interface Props {
   setOpen: (open: boolean) => void;
@@ -63,7 +62,9 @@ Props) => {
     <Box mt={0} sx={{ backgroundColor: "#F9F9F9" }}>
       <Grid container sx={{ backgroundColor: "#F9F9F9" }}>
         <Grid item sx={{ borderRight: "1px solid gainsboro" }}>
-          <SideBar></SideBar>
+          <SideBar
+            opcion={{ titulo: "CLIENTES", opcion: 3, ruta: "/clientes" }}
+          ></SideBar>
         </Grid>
         <Grid
           item
@@ -131,7 +132,7 @@ Props) => {
                     fontSize={"small"}
                     sx={{ display: { xs: "none", md: "block" }, mr: 1 }}
                   >
-                    Categoría
+                    {vista == 1 ? "Categoria" : "Etapa"}
                   </Typography>
                 </Button>
                 <Divider orientation="vertical"></Divider>
@@ -211,35 +212,92 @@ Props) => {
         openModal={openModal}
         handleCloseModal={() => setOpenModal(false)}
       >
-        <Box>
-          <Typography variant="h5">Categoria</Typography>
-          <Box sx={{ marginBlock: 2 }}>
-            <TextFieldBox
-              label={"Categoria"}
-              fieldValueName={"Categoria"}
-              useForm={propUseForm}
-            ></TextFieldBox>
+        {vista == 1 ? (
+          <Box>
+            <Typography variant="h5">Categoria</Typography>
+            <Divider></Divider>
+            <Grid container sx={{ marginBlock: 1.5 }} spacing={1}>
+              <InputBox
+                sm={6}
+                label={"Categoria"}
+                name={"Categoria"}
+                useForm={propUseForm}
+              ></InputBox>
+              <SelectColorBox
+                sm={6}
+                optionsList={[
+                  { nombre: "Turquesa", color: "#23E9A5" },
+                  { nombre: "Celeste", color: "#63C7FF" },
+                  { nombre: "Azul", color: "#3C7BFF" },
+                  { nombre: "Violeta", color: "#675BFF" },
+                  { nombre: "Lila", color: "#B023E9" },
+                  { nombre: "Fucsia", color: "#FB3088" },
+                  { nombre: "Rojo", color: "#EF5252" },
+                  { nombre: "Naranja", color: "#FD8429" },
+                  { nombre: "Amarillo", color: "#FDCB29" },
+                  { nombre: "Verde", color: "#A1EA22" },
+                ]}
+                label={"Color"}
+                optionLabel={"nombre"}
+                optionValueId={"nombre"}
+                control={control}
+              ></SelectColorBox>
+            </Grid>
+
+            <Grid container spacing={1}>
+              <ButtonBox
+                onClickFunction={() => {}}
+                isFill={true}
+                label={"Guardar"}
+              ></ButtonBox>
+              <ButtonBox
+                onClickFunction={() => setOpenModal(false)}
+                isFill={false}
+                label={"Cancelar"}
+              ></ButtonBox>
+            </Grid>
           </Box>
-          <SelectBox
-            optionsList={[{ nombre: "azul" }]}
-            label={"nombre"}
-            optionLabel={"nombre"}
-            optionValueId={"nombre"}
-            control={control}
-          ></SelectBox>
-          <Grid container spacing={1}>
-            <ButtonBox
-              onClickFunction={() => {}}
-              isFill={true}
-              label={"Guardar"}
-            ></ButtonBox>
-            <ButtonBox
-              onClickFunction={() => setOpenModal(false)}
-              isFill={false}
-              label={"Cancelar"}
-            ></ButtonBox>
-          </Grid>
-        </Box>
+        ) : (
+          <Box>
+            <Typography variant="h5">Etapa</Typography>
+            <Divider></Divider>
+            <Grid container sx={{ marginBlock: 1.5 }} spacing={1}>
+              <InputBox
+                sm={6}
+                label={"Etapa"}
+                name={"etapa"}
+                useForm={propUseForm}
+              ></InputBox>
+              <SelectColorBox
+                sm={6}
+                optionsList={[
+                  { nombre: "1er Etapa", color: "#3498DB" },
+                  { nombre: "2da Etapa", color: "#29ABC9" },
+                  { nombre: "3ra Etapa", color: "#29C9C2" },
+                  { nombre: "4ta Etapa", color: "#1CB68E" },
+                  { nombre: "5ta Etapa", color: "#27B563" },
+                ]}
+                label={"Color"}
+                optionLabel={"nombre"}
+                optionValueId={"nombre"}
+                control={control}
+              ></SelectColorBox>
+            </Grid>
+
+            <Grid container spacing={1}>
+              <ButtonBox
+                onClickFunction={() => {}}
+                isFill={true}
+                label={"Guardar"}
+              ></ButtonBox>
+              <ButtonBox
+                onClickFunction={() => setOpenModal(false)}
+                isFill={false}
+                label={"Cancelar"}
+              ></ButtonBox>
+            </Grid>
+          </Box>
+        )}
       </ModalComponent>
     </Box>
   );

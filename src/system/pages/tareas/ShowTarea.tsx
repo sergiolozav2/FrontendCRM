@@ -46,7 +46,9 @@ Props) => {
   };
   return (
     <Box sx={{ display: "flex" }}>
-      <SideBar></SideBar>
+      <SideBar
+        opcion={{ titulo: "TAREAS", opcion: 7, ruta: "/tareas" }}
+      ></SideBar>
       <Box
         width={{ md: "calc(100vw - 175px)", xs: "100vw" }}
         sx={{ backgroundColor: "#FeFcFc", p: 2 }}
